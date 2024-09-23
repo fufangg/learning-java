@@ -1,4 +1,4 @@
-package fufang.learning.java.lambda.src;
+package fufang.learning.java.lambda.data;
 
 @FunctionalInterface
 public interface SimpleAction {

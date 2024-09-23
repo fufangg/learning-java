@@ -1,6 +1,6 @@
 package fufang.learning.java.lambda.app;
 
-import fufang.learning.java.lambda.src.SimpleAction;
+import fufang.learning.java.lambda.data.SimpleAction;
 
 public class SimpleActionApp {
     public static void main(String[] args) {
