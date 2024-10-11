@@ -1,30 +1,44 @@
 package fufang.learning.stream;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Objects;
 import java.util.stream.Stream;
 
+/**
+ * This class demonstrates how to create and use a Stream Builder in Java Streams.
+ * Stream Builders are useful for constructing streams in a controlled manner.
+ */
 public class CreateStreamBuilderTest {
-    @Test
-    void createStreamBuilderTest() {
 
+    /**
+     * Tests creating a stream using a Stream Builder.
+     * Demonstrates the use of accept, add, and build methods of the Stream Builder.
+     */
+    @Test
+    void testCreateStreamBuilder() {
         Stream.Builder<String> builder = Stream.builder();
 
-        // accept method return void
+        // Using the accept method (returns void)
         builder.accept("Yusab");
 
-        // add method return Builder
+        // Using the add method (returns the builder for method chaining)
         builder.add("Alwan").add("Naufal");
 
-        // build method convert from Builder to Stream
+        // Building the stream (converts from Builder to Stream)
         Stream<String> stream = builder.build();
-        stream.forEach(name -> System.out.print(name+" "));
+
+        // Printing the names from the stream
+        stream.forEach(name -> System.out.print(name + " "));  // Expected output: Yusab Alwan Naufal
     }
 
+    /**
+     * Tests creating a stream using a simplified form of the Stream Builder.
+     * All elements are added in a single chained statement.
+     */
     @Test
-    void streamBuilderSimplifiedTest(){
+    void testStreamBuilderSimplified() {
         Stream<Object> stream = Stream.builder().add("Yusab").add("Alwan").add("Naufal").build();
-        stream.forEach(name -> System.out.print(name+" "));
+
+        // Printing the names from the stream
+        stream.forEach(name -> System.out.print(name + " "));  // Expected output: Yusab Alwan Naufal
     }
 }
